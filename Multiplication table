@@ -1,0 +1,30 @@
+import java.util.Scanner;
+import java.io.*;
+
+public class Multiplytable {
+
+	public static void main(String[] args) {
+		
+		 System.out.println("Enter a number:");
+		int num;
+		Scanner sc = new Scanner(System.in);
+		num = sc.nextInt();
+		printtable(num);
+	}
+	
+	public static void printtable(int n)
+	{
+		
+		
+		 int i = 1;
+		 
+		 for ( i = 1 ; i <= 12 ; i++ )
+		 {
+			 System.out.println(n + "*" + i + "=" + n*i );
+			// System.out.println("\n");
+		 }
+		
+
+	}
+
+}
