@@ -1,0 +1,54 @@
+import java.util.Scanner;
+import java.io.*; 
+
+
+public class Factorial {
+
+public static void main(String[] args) {
+	
+int num;
+System.out.println("Enter the digit that you want to find the factorial :");
+Scanner sc= new Scanner(System.in);
+
+num = sc.nextInt();
+long num1 = (long)num;
+int validinput = validate(num);
+
+long factorial = getFactorial(validinput);
+System.out.println("The required factorial is "+ factorial);
+
+}
+
+
+
+public static int validate(int n)
+{
+	Scanner sc= new Scanner(System.in);
+	boolean invalid = true;
+	while (invalid)
+	{
+	if( n <= 0 )
+	{
+		System.out.println("Please enter a positive number. . . !!!!");
+		n = sc.nextInt();
+	}
+	else
+	{
+		invalid = false;
+	}
+	
+	}
+	return n;
+}
+
+public static long getFactorial(int validinput)
+{
+	int i=1 ; 
+	int fact = 1;
+	for( i = 1 ; i <= validinput ; i++)
+		fact = fact*i;
+	return fact;
+	
+	}
+
+}
