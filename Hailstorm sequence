@@ -1,0 +1,67 @@
+import java.util.Scanner;
+import java.io.*;
+
+public class hailstonenum {
+
+	public static void main(String[] args)
+	{
+	
+		
+		int n , count=0;
+		System.out.println("Enter the value of input:");
+		Scanner sc = new Scanner(System.in);
+		int input = sc.nextInt();
+		
+		int validinput = validate(input);
+		hailstorm_sequence(validinput);
+	}
+		
+		
+	public static int validate(int n)
+		{
+			Scanner sc= new Scanner(System.in);
+			boolean invalid = true;
+			while (invalid)
+			{
+			if( n <= 0 )
+			{
+				System.out.println("Please enter a positive number. . . !!!!");
+				n = sc.nextInt();
+			}
+			else
+			{
+				invalid = false;
+			}
+			
+			}
+			return n;
+		}
+
+public static void hailstorm_sequence(int validinput)
+{
+		int count = 0;
+		//while(  validinput != 1 )
+		for (count = 0 ; validinput != 1 ; count++ )
+		{
+			if( validinput%2 == 0 )
+			{
+			
+				System.out.println( validinput + "is even so i take half :"+  validinput/2);
+				 validinput = validinput/2;
+				//count++;
+				
+			}
+			else
+			{
+				System.out.println(  validinput + "is odd so i make 3n+1 :" + (( validinput*3)+1) );
+				 validinput = 3* validinput+1;
+				//count++;
+			}
+				
+		}
+		
+System.out.println("There is a total of " + count + " steps to reach output!!");
+	}
+
+	}
+
