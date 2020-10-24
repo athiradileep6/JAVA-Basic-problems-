@@ -1,0 +1,76 @@
+   import java.util.Scanner;
+
+    public class Sumarray
+
+    {
+
+        public static void main(String[] args) 
+
+        {
+
+            Scanner s = new Scanner(System.in);
+
+            System.out.print("Enter no. of elements you want in array:");
+            
+            int input = s.nextInt();
+            int n = validate(input);
+
+            int a[] = createArray(n);
+
+            int result = sumOfarray(a,n);
+            System.out.println("Sum:"+result);
+           
+        }
+        
+        
+        
+
+  	//Array creation
+ public static int[] createArray(int n) 
+    	{
+    		Scanner sc = new Scanner(System.in);
+    		int[] arrInt = new int[n];
+    		
+    		System.out.println("Enter the elements of the array");
+    		for( int i = 0 ; i < n ; i++ ) 
+    		{
+    			arrInt[i]= sc.nextInt();
+    		}
+    		return arrInt;
+    	}
+    	
+   //Array sum
+    	
+public static int sumOfarray(int[] arr , int n)
+        {
+        	int sum = 0;
+        	for(int i = 0; i < n; i++)
+
+             {
+                 sum = sum + arr[i];
+             }
+        	 return sum;
+        }
+        
+        
+ public static int validate(int n)
+    	{
+    		Scanner sc= new Scanner(System.in);
+    		boolean invalid = true;
+    		while (invalid)
+    		{
+    		if( n <= 0 )
+    		{
+    			System.out.println("Please enter a positive number. . . !!!!");
+    			n = sc.nextInt();
+    		}
+    		else
+    		{
+    			invalid = false;
+    		}
+    		
+    		}
+    		return n;
+    	}
+
+    }
